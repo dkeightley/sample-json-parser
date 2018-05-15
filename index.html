@@ -3,20 +3,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
-$(document).ready(function () {
+(function($) {
       var jsonURL = "sample.json";
+      var html = "";
       $.getJSON(jsonURL, function (json) {
         $.each(json.results, function (key, val) {
-          $("ul").append("<img src ='" + val.img_url + "' />");
+          html = '<div class="image-list">';
+          html += '<img src ="' + val.img_url + '" class="image-styles" />';
+          html += '<p class="image-title">' + val.name + '</p>';
+          html += '</div>';
+          $('#target').append(html);
+          });
     });
-    });
-});
+}(jQuery));
 </script>
 <title>Insert title here</title>
 </head>
 <body>
-  <div>
-    <ul></ul>
-  </div>
+  <div id="target"></div>
 </body>
 </html>
