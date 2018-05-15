@@ -2,6 +2,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    var jsonURL = "sample.json";
+    $.getJSON(jsonURL, function (json)
+    {
+      target = $('#target'),
+            html;
+      $.each(json.results, function (key, val) {
+        html = '<div class="image-list">';
+        html += '<img src ="' + val.img_url + '" class="image-styles" />';
+        html += '<p class="image-title">' + val.name + '</p>';
+        html += '</div>';
+        target.append(html);
+    });
+  });
+</script>
 <title>Insert title here</title>
 </head>
 <body>
