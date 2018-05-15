@@ -1,0 +1,16 @@
+{
+   "results": [
+      {
+         "name": "Cat pic 1",
+         "img_url": "images/cat-1.jpg"
+      },
+      {
+         "name": "Cat pic 2",
+         "img_url": "images/cat-2.jpg"
+      },
+      {
+         "name": "Cat pic 3",
+         "img_url": "images/cat-3.jpg"
+      }
+  ]
+}
